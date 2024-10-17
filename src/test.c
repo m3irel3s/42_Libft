@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/17 10:45:41 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/17 15:13:25 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/10/17 17:10:31 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/10/17 17:46:07 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
+#include <string.h>
 
-size_t	ft_strlen(char *str)
+int main(void)
 {
-	size_t	i;
-
-	i = 0;
-	if (!str)
-		return (0);
-	while (str[i])
-		i++;
-	return (i);
-}
-
-int	main(void)
-{
-	printf("%zu", ft_strlen(NULL));
+	int source [30] = {1,2,3,4,5,6,7,8,9,10};
+	int destination [30] = {11, 12, 3, 4, 5, 16, 17, 18, 19, 20, 30};
+	memmove (destination + 2, source, sizeof(int) * 8);
+	for (int i = 0; i < 20; i++)
+	printf("source [%d]=%d\n", i, destination[i]);
 }

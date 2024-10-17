@@ -8,6 +8,8 @@ INC_PATH = ./inc
 
 SRC = $(wildcard $(SRC_PATH))/*.c
 
+# SRC = $(addprefix $(SRC_PATH)/, ft_bzero.c)
+
 INC = -I $(INC_PATH)
 
 OBJ = $(SRC:.c=.o)
