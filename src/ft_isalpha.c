@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 13:01:01 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/17 13:48:40 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/17 15:09:53 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_isalpha(int c)
 }
 int	main(void)
 {
-	printf("%d\n", isalpha('Z'));
+	printf("%d\n", isalpha(90));
 	printf("%d\n", isalpha(1));
 	printf("%d\n", ft_isalpha('c'));
 }

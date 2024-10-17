@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 11:54:32 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/17 12:33:43 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/17 15:09:54 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	main(void)
 {
 	char	str[50] = "olad ofdsa 14321run";
 	printf("Before bzero => %s\n", str);
-	ft_bzero(str + 10, 2);
+	// bzero(str + 10, 2);
+	// ft_bzero(str + 10, 2);
 	printf("After bzero => %s\n",str);
 }
