@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/17 17:10:31 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/17 18:06:38 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/10/22 10:32:00 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/10/22 10:38:43 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
-#include <string.h>
 
-int main(void)
+int	ft_toupper(int c)
 {
-	int source [30] = {1,2,3,4,5,6,7,8,9,10};
-	int destination [30] = {11, 12, 3, 4, 5, 16, 17, 18, 19, 20, 30};
-	memmove (destination + 2, source, sizeof(int) * 8);
-	for (int i = 0; i < 20; i++)
-	printf("source [%d]=%d\n", i, destination[i]);
+	if(c >= 97 && c <= 122)
+		c = c - 32;
+	return (c);
+}
+
+int	main(void)
+{
+	printf("%c",ft_toupper('A'));
 }

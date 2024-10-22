@@ -1,43 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/17 12:34:30 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/21 11:24:49 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/10/21 11:29:07 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/10/21 15:12:20 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t	i;
-	const char *s;
-	char *d;
-
-	s = (const char *) src;
-	d = (char *) dest;
-
+	size_t i;
+	size_t srcSize;
 	i = 0;
-	if (!dest || !src)
-		return (NULL);
-	while (i < n)
+	
+	srcSize = ft_strlen(src);
+	if (!dst || !src)
+		return (0);
+	if (size == 0)
+		return (srcSize);
+	while (src[i] && (i < size - 1))
 	{
-		d[i] = s[i];
+		dst[i] = src[i];
 		i++;
 	}
-	return dest;
+	dst[i] = '\0';
+	return (srcSize);
 }
-	
+
 int	main(void)
 {
-	char	src[10] = "oladfa";
-	char	dest[10] = "";
-	printf("Before memcpy => %s\n", dest);
-	ft_memcpy(dest, src, 3);
-	printf("%zu\n", ft_strlen(dest));
-	printf("After memcpy => %s\n", dest);
+	char	dest[6] = " ello";
+	char	*src = "hello";
+	printf("Dest before: :%s:\n", dest);
+	printf("%zu\n", ft_strlcpy(dest, src, 2));
+	printf("Dest after: :%s:\n", dest);
 }

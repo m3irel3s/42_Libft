@@ -1,49 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/17 14:43:18 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/21 11:21:42 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/10/22 10:43:03 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/10/22 11:35:59 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
-#include <string.h>
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	char	*d;
-	const char	*s;
-
-	d = dest;
-	s = src;
-
-
-	if (!dest || !src)
+	if (!s)
 		return (NULL);
-
-	if (dest > src)
+	while(*s)
 	{
-		ft_memcpy(d, s, n);
+		if(*s == c)
+			return (char *)s;
+		s++;
 	}
-	else
-	{
-		while (n--)
-		{
-			d[n] = s[n];
-		}
-	}
-	return (dest);
-
+	if (c == '\0')
+		return (char *)s;
+	return (NULL);
 }
 
-int	main(void)	
+int	main(void)
 {
-	int	src[10] = {1, 2, 3, 5, 10, 13, 30};
-	memmove(src + 2, src, sizeof(int) * 5);
-	for(int i = 0; i < 10; i++)
-	printf("src[%d] = %d\n", i, src[i]);	
+	char *str = "olfda213";
+	char *str2 = "olfda213";
+	printf("ft_strchr: %s\n", ft_strchr("\0", 'l'));
+	printf("strchr: %s\n", strchr("\0", 'l'));
 }

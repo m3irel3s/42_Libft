@@ -1,49 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/17 14:43:18 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/21 11:21:42 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/10/22 13:03:31 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/10/22 13:18:16 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
-#include <string.h>
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char	*d;
-	const char	*s;
+	size_t	i;
 
-	d = dest;
-	s = src;
-
-
-	if (!dest || !src)
-		return (NULL);
-
-	if (dest > src)
+	if (!s1 || !s2 || (n <= 0))
+		return (0);
+	i = 0;
+	while ((i < n) && (s1[i] || s2[i]))
 	{
-		ft_memcpy(d, s, n);
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
 	}
-	else
-	{
-		while (n--)
-		{
-			d[n] = s[n];
-		}
-	}
-	return (dest);
-
+	return (0);
 }
 
-int	main(void)	
+int	main(void)
 {
-	int	src[10] = {1, 2, 3, 5, 10, 13, 30};
-	memmove(src + 2, src, sizeof(int) * 5);
-	for(int i = 0; i < 10; i++)
-	printf("src[%d] = %d\n", i, src[i]);	
+	char *str1 = NULL;
+	char *str2 = "\0";
+	printf("%d", ft_strncmp(str1, str2, 3));
 }
