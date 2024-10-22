@@ -1,44 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 14:38:23 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/22 17:05:19 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/10/22 15:54:40 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/10/22 17:00:23 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t		i;
-	unsigned char	*str;
+	unsigned char *str1;
+	unsigned char *str2;
 
-	str = (unsigned char *)s;
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
 	i = 0;
-	if (!s)
-		return (NULL);
 	while (i < n)
 	{
-		if(str[i] == (unsigned char)c)
-			return (str + i);
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
 		i++;
 	}
-	return (NULL);
+	return (0);
 }
 
 int	main(void)
 {
-	char	*s = "helloola";
-	char	c = 'l';
-	char *p;
-	char *d;
-
-	p = memchr(s, c, 5);
-	d = ft_memchr(s, c, 5);
-	printf("p: %s\n", p);
-	printf("d: %s\n", d);
+	char	*str1 = "olaola";
+	char	*str2 = "olaolas";
+	printf("%d", ft_memcmp(str1, str2, 7));
+	printf("%d", memcmp(str1, str2, 7));
 }
