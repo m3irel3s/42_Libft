@@ -1,39 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 11:37:08 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/22 12:10:23 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/10/22 21:56:51 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/10/23 21:57:28 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	len;
-	int		i;
+	void	*ptr;
+	size_t	alloc_space;
 
-	i = 0;
-	len = ft_strlen(s) - 1;
-	while (len > i)
-	{
-		if (s[len] == c)
-			return (char *)s + len;
-		len--;
-	}
-	if(!s)
+	alloc_space = nmemb * size;
+	ptr = malloc(alloc_space);
+	if (ptr == NULL)
 		return (NULL);
-	if(c == '\0')
-		return (char *)s;
-	return (NULL);
-	}
-
-int	main(void)
-{
-	char	*str = "olfikri4l31";
-	printf("%s", ft_strrchr(str, 'i'));
+	ft_bzero(ptr, alloc_space);
+	return (ptr);
 }
+
+/* int	main(void)
+{
+	char *p;
+	p = calloc(0, 0);
+	strcpy(p, "abcd");
+	printf("%s", p);
+	free (p);
+} */

@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 18:06:48 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/17 15:09:51 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/10/17 11:54:32 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/10/23 21:27:02 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
-int	ft_isdigit(int c)
+void	ft_bzero(void *s, size_t n)
 {
-	return (c >= 0 && c <= 9);
+	size_t	i;
+	char	*p;
+
+	i = 0;
+	p = s;
+	while (i < n)
+		p[i++] = '\0';
 }
 
-int	main(void)
+/* int	main(void)
 {
-	printf("%d\n", ft_isdigit(3));
-	printf("%d\n", ft_isdigit('3'));
-}
+	char	str[50] = "olad ofdsa 14321run";
+	printf("Before bzero => %s\n", str);
+	// bzero(str + 10, 2);
+	// ft_bzero(str + 10, 2);
+	printf("After bzero => %s\n",str);
+} */

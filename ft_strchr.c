@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 13:01:01 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/17 15:09:53 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/10/22 10:43:03 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/10/23 21:47:28 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
-int	ft_isalpha(int c)
+char	*ft_strchr(const char *s, int c)
 {
-	return ((c >= 'A' && c <= 'Z' ) || (c >= 'a' && c <= 'z'));
+	if (!s)
+		return (NULL);
+	while (*s)
+	{
+		if (*s == c)
+			return ((char *)s);
+		s++;
+	}
+	if (c == '\0')
+		return ((char *)s);
+	return (NULL);
 }
-int	main(void)
+
+/* int	main(void)
 {
-	printf("%d\n", isalpha(90));
-	printf("%d\n", isalpha(1));
-	printf("%d\n", ft_isalpha('c'));
-}
+	char *str = "olfda213";
+	char *str2 = "olfda213";
+	printf("ft_strchr: %s\n", ft_strchr("\0", 'l'));
+	printf("strchr: %s\n", strchr("\0", 'l'));
+} */

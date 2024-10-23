@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 14:48:05 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/23 14:58:50 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/23 21:28:45 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <stddef.h>
 #include <strings.h>
 #include <string.h>
+#include <bsd/string.h>
+
 
 //                PART 1 - MANDATORY FUNCTIONS                   //
 

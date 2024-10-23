@@ -1,49 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/17 14:43:18 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/21 11:21:42 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/10/17 12:34:30 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/10/23 21:54:39 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
-#include <string.h>
+#include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	char	*d;
+	size_t		i;
 	const char	*s;
+	char		*d;
 
-	d = dest;
-	s = src;
-
-
+	s = (const char *) src;
+	d = (char *) dest;
+	i = 0;
 	if (!dest || !src)
 		return (NULL);
-
-	if (dest > src)
+	while (i < n)
 	{
-		ft_memcpy(d, s, n);
-	}
-	else
-	{
-		while (n--)
-		{
-			d[n] = s[n];
-		}
+		d[i] = s[i];
+		i++;
 	}
 	return (dest);
-
 }
-
-int	main(void)	
+/* int	main(void)
 {
-	int	src[10] = {1, 2, 3, 5, 10, 13, 30};
-	memmove(src + 2, src, sizeof(int) * 5);
-	for(int i = 0; i < 10; i++)
-	printf("src[%d] = %d\n", i, src[i]);	
-}
+	char	src[10] = "oladfa";
+	char	dest[10] = "";
+	printf("Before memcpy => %s\n", dest);
+	ft_memcpy(dest, src, 3);
+	printf("%zu\n", ft_strlen(dest));
+	printf("After memcpy => %s\n", dest);
+} */

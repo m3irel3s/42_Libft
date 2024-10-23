@@ -1,25 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 10:32:00 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/22 10:38:43 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/10/23 10:46:48 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/10/23 21:27:50 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
-int	ft_toupper(int c)
+char	*ft_strdup(const char *s)
 {
-	if(c >= 97 && c <= 122)
-		c = c - 32;
-	return (c);
+	size_t	len;
+	size_t	i;
+	char	*p;
+
+	i = 0;
+	len = ft_strlen(s);
+	p = malloc(sizeof(char) * (len + 1));
+	if (p == NULL)
+		return (NULL);
+	while (s[i])
+	{
+		p[i] = s[i];
+		i++;
+	}
+	p[i] = '\0';
+	return (p);
 }
 
-int	main(void)
+/* int	main(void)
 {
-	printf("%c",ft_toupper('A'));
-}
+	char *p;
+	p = ft_strdup("ola123");
+	printf("%s", p);
+	free(p);
+} */

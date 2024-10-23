@@ -6,37 +6,35 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 14:21:32 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/22 14:05:04 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/23 21:46:37 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
-#include <bsd/string.h>
+#include "libft.h"
 
-size_t ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	size_t	dstSize;
-	size_t	srcSize;
-	
-	
+	size_t	dst_size;
+	size_t	src_size;	
+
 	if (!dst || !src)
 		return (0);
 	i = 0;
-	dstSize = ft_strlen(dst);
-	srcSize = ft_strlen(src);
-	if (dstSize >= size)
-		return (size + srcSize);
-	while (i < (size - dstSize - 1))
+	dst_size = ft_strlen(dst);
+	src_size = ft_strlen(src);
+	if (dst_size >= size)
+		return (size + src_size);
+	while (i < (size - dst_size - 1))
 	{
-		dst[dstSize + i] = src[i];
+		dst[dst_size + i] = src[i];
 		i++;
-	}	
-	dst[dstSize + i] = '\0';
-	return (dstSize + srcSize);
+	}
+	dst[dst_size + i] = '\0';
+	return (dst_size + src_size);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	char dest[] = "olahello";
 	char src[] = "hello";
@@ -44,4 +42,4 @@ int	main(void)
 	// printf("%zu\n", strlcat(dest, src, 5));
 	printf("%zu\n", ft_strlcat(dest, src, 5));
 	printf("After strlcat => %s\n", dest);
-}
+} */

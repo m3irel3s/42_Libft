@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmeirele <jmeirele@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/17 10:42:53 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/22 14:36:31 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/10/17 10:38:56 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/10/23 21:30:15 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
-int	ft_isprint(int c)
+int	ft_isascii(int c)
 {
-	return (c >= 32 && c <= 126);
+	return (c >= 0 && c <= 127);
 }
-int	main(void)
+
+/* int main(void)
 {
-	printf("%d", ft_isprint('\t'));
-}
+	printf("%d",ft_isascii(30));
+} */

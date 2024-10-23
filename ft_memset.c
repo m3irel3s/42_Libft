@@ -1,43 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/17 12:34:30 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/21 11:24:49 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/10/17 11:02:50 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/10/23 21:47:41 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
+
 {
-	size_t	i;
-	const char *s;
-	char *d;
+	size_t			i;
+	unsigned char	*p;
 
-	s = (const char *) src;
-	d = (char *) dest;
-
+	p = s;
 	i = 0;
-	if (!dest || !src)
+	if (!s)
 		return (NULL);
 	while (i < n)
-	{
-		d[i] = s[i];
-		i++;
-	}
-	return dest;
+		p[i++] = c;
+	return (p);
 }
-	
-int	main(void)
+
+/* int	main(void)
 {
-	char	src[10] = "oladfa";
-	char	dest[10] = "";
-	printf("Before memcpy => %s\n", dest);
-	ft_memcpy(dest, src, 3);
-	printf("%zu\n", ft_strlen(dest));
-	printf("After memcpy => %s\n", dest);
-}
+	char	str[30] = "ola 123 hello";
+	printf("Before memset => %s\n", str);
+	ft_memset(str + 3, 'x', 4);
+	printf("After memset => %s\n", str);
+} */

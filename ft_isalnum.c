@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 10:43:03 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/23 16:10:57 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/10/17 10:21:23 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/10/23 21:30:08 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int	ft_isalnum(int c)
 {
-	if (!s)
-		return (NULL);
-	while(*s)
-	{
-		if(*s == c)
-			return (char *)s;
-		s++;
-	}
-	if (c == '\0')
-		return (char *)s;
-	return (NULL);
+	return (ft_isalpha(c) || ft_isdigit(c));
 }
 
 /* int	main(void)
 {
-	char *str = "olfda213";
-	char *str2 = "olfda213";
-	printf("ft_strchr: %s\n", ft_strchr("\0", 'l'));
-	printf("strchr: %s\n", strchr("\0", 'l'));
+	printf("%d", ft_isalnum(5));
 } */

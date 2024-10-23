@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/17 11:02:50 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/17 16:21:31 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/10/22 11:37:08 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/10/23 21:33:28 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
-
+char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
-	unsigned char	*p;
+	size_t	len;
+	int		i;
 
-	p = s;
 	i = 0;
+	len = ft_strlen(s) - 1;
+	while (len > i)
+	{
+		if (s[len] == c)
+			return ((char *)s + len);
+		len--;
+	}
 	if (!s)
 		return (NULL);
-	while (i < n)
-		p[i++] = c;
-	return (p);
+	if (c == '\0')
+		return ((char *)s);
+	return (NULL);
 }
-
-int	main(void)
+/* int	main(void)
 {
-	char	str[30] = "ola 123 hello";
-	printf("Before memset => %s\n", str);
-	ft_memset(str + 3, 'x', 4);
-	printf("After memset => %s\n", str);
-}
+	char	*str = "olfikri4l31";
+	printf("%s", ft_strrchr(str, 'i'));
+} */

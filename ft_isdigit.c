@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 10:40:51 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/22 10:42:25 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/10/16 18:06:48 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/10/23 21:30:17 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
-int	ft_tolower(int c)
+int	ft_isdigit(int c)
 {
-	if (c >= 65 && c <= 97)
-		c = c + 32;
-	return (c);
+	return (c >= 0 && c <= 9);
 }
 
-int	main(void)
+/* int	main(void)
 {
-	printf("%c", ft_tolower('c'));
-	printf("%c", ft_tolower('D'));
-}
+	printf("%d\n", ft_isdigit(3));
+	printf("%d\n", ft_isdigit('3'));
+} */

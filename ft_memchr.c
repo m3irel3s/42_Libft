@@ -6,15 +6,15 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 14:38:23 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/22 17:05:19 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/23 21:56:29 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t		i;
+	size_t			i;
 	unsigned char	*str;
 
 	str = (unsigned char *)s;
@@ -23,14 +23,14 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		return (NULL);
 	while (i < n)
 	{
-		if(str[i] == (unsigned char)c)
+		if (str[i] == (unsigned char)c)
 			return (str + i);
 		i++;
 	}
 	return (NULL);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	char	*s = "helloola";
 	char	c = 'l';
@@ -41,4 +41,4 @@ int	main(void)
 	d = ft_memchr(s, c, 5);
 	printf("p: %s\n", p);
 	printf("d: %s\n", d);
-}
+} */

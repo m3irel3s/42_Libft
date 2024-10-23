@@ -6,11 +6,11 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 14:58:24 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/23 17:13:56 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/23 21:44:00 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/libft.h"
+#include "libft.h"
 
 char	*ft_strtrim(const char *s1, const char *set)
 {
@@ -18,9 +18,9 @@ char	*ft_strtrim(const char *s1, const char *set)
 	size_t	end;
 	char	*str;
 
-	if(!s1)
+	if (!s1)
 		return (NULL);
-	if(!set)
+	if (!set)
 		return (ft_strdup(s1));
 	start = 0;
 	end = (ft_strlen(s1));
@@ -28,11 +28,11 @@ char	*ft_strtrim(const char *s1, const char *set)
 		start++;
 	while (s1[end] && ft_strchr(set, s1[end]))
 		--end;
-	str = ft_substr(s1, start, ((end - start)+ 1));
+	str = ft_substr(s1, start, ((end - start) + 1));
 	return (str);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	char	*str1 = "     hello    world!     ";
 	char	*str2 = "h!";
@@ -40,4 +40,4 @@ int	main(void)
 	p = ft_strtrim(str1, str2);
 	printf("%s", p);
 	free(p);
-}
+} */
