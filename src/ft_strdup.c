@@ -1,35 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 21:56:51 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/23 10:51:33 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/10/23 10:46:48 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/10/23 11:22:01 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_strdup(const char *s)
 {
-	void	*ptr;
-	size_t	alloc_space;
+	size_t	len;
+	size_t	i;
+	char	*p;
 
-	alloc_space = nmemb * size;
-	ptr = malloc(alloc_space);
-	if(ptr == NULL)
+	i = 0;
+	len = ft_strlen(s);
+	p = malloc(sizeof(char) * (len + 1));
+	if (p == NULL)
 		return (NULL);
-	ft_bzero(ptr, alloc_space);
-	return ptr;
-	
+	while (s[i])
+	{
+		p[i] = s[i];
+		i++;
+	}
+	p[i] = '\0';
+	return (p);
 }
+
 int	main(void)
 {
 	char *p;
-	p = ft_calloc(2, sizeof(char));
-	strcpy(p, "abcd");
+	p = ft_strdup("ola123");
 	printf("%s", p);
-	free (p);
+	free(p);
 }
