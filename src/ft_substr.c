@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 11:26:01 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/23 13:10:39 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/23 16:11:46 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (substr);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	char	*original = "hello world";
 	char	*substr;
@@ -50,4 +50,4 @@ int	main(void)
 	{
 		printf("memory failed to alloc");
 	}
-}
+} */

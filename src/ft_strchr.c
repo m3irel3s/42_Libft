@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:43:03 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/22 14:48:16 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/23 16:10:57 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	char *str = "olfda213";
 	char *str2 = "olfda213";
 	printf("ft_strchr: %s\n", ft_strchr("\0", 'l'));
 	printf("strchr: %s\n", strchr("\0", 'l'));
-}
+} */

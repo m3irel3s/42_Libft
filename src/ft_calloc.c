@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 21:56:51 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/23 12:23:25 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/23 16:12:18 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	return ptr;
 	
 }
-
 
 // int	main(void)
 // {
