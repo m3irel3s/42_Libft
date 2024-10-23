@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 10:46:48 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/23 11:22:01 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/23 12:00:50 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ char	*ft_strdup(const char *s)
 	return (p);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	char *p;
 	p = ft_strdup("ola123");
 	printf("%s", p);
 	free(p);
-}
+} */

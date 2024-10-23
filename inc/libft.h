@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 14:48:05 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/22 23:18:03 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/23 13:10:37 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include <strings.h>
 #include <string.h>
 
-//          PART 1 - MANDATORY FUNCTIONS
+//                PART 1 - MANDATORY FUNCTIONS                   //
 
 int	ft_isalpha(int c);
 int	ft_isdigit(int c);
@@ -42,8 +42,23 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strstr(const char *haystack, const char *needle);
 int	ft_atoi(const char *nptr);
 
-//          PART 1 - MALLOC FUNCTIONS
+// ---------------------------------------------------------- //
+
+//                PART 1 - MALLOC FUNCTIONS                   //
+
 void	*ft_calloc(size_t nmemb, size_t size);
+char	*ft_strdup(const char *s);
+
+// ---------------------------------------------------------- //
+
+//                PART 2 - ADITIONAL FUNCTIONS                 //
+
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+
+
+
+
+
 
 
 

@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 21:56:51 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/23 10:51:33 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/23 12:23:25 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,13 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	return ptr;
 	
 }
-int	main(void)
-{
-	char *p;
-	p = ft_calloc(2, sizeof(char));
-	strcpy(p, "abcd");
-	printf("%s", p);
-	free (p);
-}
+
+
+// int	main(void)
+// {
+// 	char *p;
+// 	p = calloc(0, 0);
+// 	strcpy(p, "abcd");
+// 	printf("%s", p);
+// 	free (p);
+// }
