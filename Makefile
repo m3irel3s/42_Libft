@@ -1,38 +1,29 @@
+NAME = libft.a
 CC = cc
-
 CFLAGS = -Wall -Wextra -Werror
-
-SRC_PATH = ./src
-
-INC_PATH = ./inc
-
-SRC = $(wildcard $(SRC_PATH))/*.c
-
-# SRC = $(addprefix $(SRC_PATH)/, ft_bzero.c)
-
-INC = -I $(INC_PATH)
+SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
+ft_isascii.c ft_isdigit.c ft_isprint.c ft_memchr.c ft_memcmp.c \
+ft_memcpy.c ft_memmove.c ft_memset.c ft_strchr.c ft_strdup.c \
+ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c \
+ft_strrchr.c ft_strstr.c ft_strtrim.c ft_substr.c ft_tolower.c \
+ft_toupper.c
 
 OBJ = $(SRC:.c=.o)
 
-NAME = libft.a
-
 all: $(NAME)
 
-# Rule to create the library
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $^
+	ar rcs $(NAME) $(OBJ)
 
-# Rule for creating object files
 %.o: %.c
-	$(CC) $(CFLAGS) $(INC) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	/bin/rm -f $(OBJ)
+	rm -f $(OBJ)
 
-fclean: clean 
-	/bin/rm -f $(NAME)
+fclean: clean
+	rm -f $(NAME)
 
 re: fclean all
-	/bin/rm -f $(NAME)
-	
-.PHONY: all clean fclean re
+
+.PHONY:		all clean fclean re

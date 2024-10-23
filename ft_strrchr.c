@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 11:37:08 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/23 21:33:28 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/23 22:01:08 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	size_t	len;
-	int		i;
+	size_t	i;
 
 	i = 0;
 	len = ft_strlen(s) - 1;
