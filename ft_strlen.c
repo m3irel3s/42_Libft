@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 10:45:41 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/23 21:28:18 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/24 12:00:04 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ size_t	ft_strlen(const char *str)
 	size_t	i;
 
 	i = 0;
-	if (!str)
-		return (0);
 	while (str[i])
 		i++;
 	return (i);
@@ -28,3 +26,5 @@ size_t	ft_strlen(const char *str)
 {
 	printf("%zu", ft_strlen(NULL));
 } */
+	// if (!str)
+	// 	return (0);

@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 14:21:32 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/23 21:46:37 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/24 11:59:51 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	dst_size;
 	size_t	src_size;	
 
-	if (!dst || !src)
-		return (0);
 	i = 0;
 	dst_size = ft_strlen(dst);
 	src_size = ft_strlen(src);
@@ -43,3 +41,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	printf("%zu\n", ft_strlcat(dest, src, 5));
 	printf("After strlcat => %s\n", dest);
 } */
+// if (!dst || !src)
+	// 	return (0);

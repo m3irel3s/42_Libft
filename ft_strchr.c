@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:43:03 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/23 21:47:28 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/24 11:59:40 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	if (!s)
-		return (NULL);
 	while (*s)
 	{
 		if (*s == c)
@@ -34,3 +32,5 @@ char	*ft_strchr(const char *s, int c)
 	printf("ft_strchr: %s\n", ft_strchr("\0", 'l'));
 	printf("strchr: %s\n", strchr("\0", 'l'));
 } */
+	// if (!s)
+	// 	return (NULL);

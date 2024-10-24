@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 17:11:23 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/23 21:31:24 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/24 12:00:49 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
+	if (little[0] == '\0')
+		return ((char *)big);
 	i = 0;
-	if (needle[0] == '\0')
-		return ((char *)haystack);
-	while (haystack[i] != '\0')
+	while (i < len)
 	{
 		j = 0;
-		while (haystack[i + j] != '\0' && haystack[i + j] == needle[j])
+		while (big[i + j] != '\0' && big[i + j] == little[j])
 		{
-			if (needle[j + 1] == '\0')
-				return ((char *)&haystack[i]);
+			if (little[j + 1] == '\0')
+				return ((char *)&big[i]);
 			j++;
 		}
 		i++;
@@ -37,8 +37,7 @@ char	*ft_strstr(const char *haystack, const char *needle)
 /* int	main(void)
 {
 	char	*str1 = "hello world!";
-	char	*str2 = "ol";
-	printf("ft_strstr: %s\n", ft_strstr(str1, str2));
-	printf("strstr: %s\n", strstr(str1, str2));
-
+	char	*str2 = "l";
+	printf("ft_strstr: %s\n", ft_strnstr(str1, str2, 3));
+	printf("ft_strstr: %s\n", ft_strnstr(str1, str2, 10));
 } */

@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 14:43:18 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/23 21:54:16 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/24 11:59:06 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	d = dest;
 	s = src;
-	if (!dest || !src)
-		return (NULL);
 	if (dest > src)
 	{
 		ft_memcpy(d, s, n);
@@ -42,3 +40,5 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	for(int i = 0; i < 10; i++)
 	printf("src[%d] = %d\n", i, src[i]);	
 } */
+// if (!dest || !src)
+	// 	return (NULL);

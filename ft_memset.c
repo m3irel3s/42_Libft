@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 11:02:50 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/23 21:47:41 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/24 11:59:22 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ void	*ft_memset(void *s, int c, size_t n)
 
 	p = s;
 	i = 0;
-	if (!s)
-		return (NULL);
 	while (i < n)
 		p[i++] = c;
 	return (p);
@@ -34,3 +32,5 @@ void	*ft_memset(void *s, int c, size_t n)
 	ft_memset(str + 3, 'x', 4);
 	printf("After memset => %s\n", str);
 } */
+// if (!s)
+	// 	return (NULL);
