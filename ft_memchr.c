@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 14:38:23 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/23 21:56:29 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/24 22:15:46 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	str = (unsigned char *)s;
 	i = 0;
-	if (!s)
-		return (NULL);
 	while (i < n)
 	{
 		if (str[i] == (unsigned char)c)
@@ -42,3 +40,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	printf("p: %s\n", p);
 	printf("d: %s\n", d);
 } */
+// if (!s)
+// 		return (NULL);

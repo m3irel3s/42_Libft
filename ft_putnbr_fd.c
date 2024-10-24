@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 17:26:53 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/24 17:35:39 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/24 22:09:15 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void ft_putnbr_fd(int n, int fd)
 	ft_putchar_fd(n % 10 + 48, fd);
 }
 
-int main(void)
+/* int main(void)
 {
 	ft_putnbr_fd(214431, 2);
-}
+} */

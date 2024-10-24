@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 12:26:15 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/24 15:37:03 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/24 22:06:51 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,17 +85,17 @@ char	**ft_split(char const *s, char c)
 	return (arr);
 }
 
-int	main(void)
-{
-	char	*str = "eeHeeello World , Goodbye Fellas !e";
-	char	c = 'e';
-	char	**res;
-	size_t	i;
+// int	main(void)
+// {
+// 	char	*str = "eeHeeello World , Goodbye Fellas !e";
+// 	char	c = 'e';
+// 	char	**res;
+// 	size_t	i;
 
-	ft_split(str, c);
-	i = 0;
-	res = ft_split(str, c);
-	for(int i; str[i]; i++)
-		printf("%s", res[i]);
-	free(res);
-}
+// 	ft_split(str, c);
+// 	i = 0;
+// 	res = ft_split(str, c);
+// 	for(int i; str[i]; i++)
+// 		printf("%s", res[i]);
+// 	free(res);
+// }

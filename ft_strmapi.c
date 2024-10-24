@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 17:17:58 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/24 22:06:49 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/10/24 22:19:21 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/10/24 22:22:47 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putendl_fd(char *s, int fd)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
-}
+	size_t	i;
+	char	*str;
+	i = 0;
 
-/* int	main(void)
+	if (!s || !f)
+		return (NULL);
+
+int	main(void)
 {
-	ft_putendl_fd("ola123", 2);
-} */
+	ft_strmapi()
+}

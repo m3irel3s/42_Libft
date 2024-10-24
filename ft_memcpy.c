@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 12:34:30 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/24 11:58:50 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/24 20:30:25 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	const char	*s;
 	char		*d;
 
+	if (!dest && !src)
+		return (NULL);
 	s = (const char *) src;
 	d = (char *) dest;
 	i = 0;
@@ -37,5 +39,3 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	printf("%zu\n", ft_strlen(dest));
 	printf("After memcpy => %s\n", dest);
 } */
-// if (!dest || !src)
-	// 	return (NULL);
