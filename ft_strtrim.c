@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 14:58:24 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/24 12:33:09 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/25 13:38:15 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,19 @@ char	*ft_strtrim(const char *s1, const char *set)
 	if (!set)
 		return (ft_strdup(s1));
 	start = 0;
-	end = (ft_strlen(s1));
+	end = (ft_strlen(s1) - 1);
 	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
 	while (s1[end] && ft_strchr(set, s1[end]))
 		--end;
-	str = ft_substr(s1, start, ((end - start) + 1));
+	str = ft_substr(s1, start, ((end - start)) + 1);
 	return (str);
 }
 
 /* int	main(void)
 {
-	char	*str1 = "     hello    world!     ";
-	char	*str2 = "h!";
+	char	*str1 = "     hello    world!h     ";
+	char	*str2 = "h ";
 	char	*p;
 	p = ft_strtrim(str1, str2);
 	printf("%s", p);

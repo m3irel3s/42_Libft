@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 11:37:08 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/24 22:18:16 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/25 15:01:40 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,21 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	len;
-	size_t	i;
+	int		len;
 
-	i = 0;
-	len = ft_strlen(s) - 1;
-	while (len > i)
+	len = ft_strlen(s);
+	while (len >= 0)
 	{
-		if (s[len] == c)
-			return ((char *)s + len);
+		if (s[len] == (char)c)
+			return ((char *)(s + len));
 		len--;
 	}
-	if (!s)
-		return (NULL);
-	if (c == '\0')
-		return ((char *)s);
-	return (NULL);
+	return (0);
 }
 /* int	main(void)
 {
-	char	*str = "olfikri4l31";
+	char	*str = "fdsaofewifewqfi";
 	printf("%s", ft_strrchr(str, 'i'));
 } */
+// if (!s)
+	// 	return (NULL);

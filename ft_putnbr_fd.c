@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 17:26:53 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/24 22:09:15 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/25 12:26:48 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)
 	{
-		write(fd, "-2147483648", 12);
+		write(fd, "-2147483648", 11);
 		return ;
 	}
 	if (n < 0)
@@ -33,5 +33,5 @@ void ft_putnbr_fd(int n, int fd)
 
 /* int main(void)
 {
-	ft_putnbr_fd(214431, 2);
+	ft_putnbr_fd(-2147483648LL, 2);
 } */
