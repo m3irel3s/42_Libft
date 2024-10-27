@@ -6,9 +6,12 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 14:48:05 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/25 23:25:13 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/27 19:07:20 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef LIBFT_H
+# define LIBFT_H
 
 #include <unistd.h>
 #include <stdio.h>
@@ -53,7 +56,7 @@ char	*ft_strdup(const char *s);
 
 // ---------------------------------------------------------- //
 
-//                PART 2 - ADITIONAL FUNCTIONS                 //
+//               PART 2 - ADITIONAL FUNCTIONS                 //
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
@@ -66,3 +69,19 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+// ---------------------------------------------------------- //
+
+//                       BONUS PART                           //
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+
+
+#endif
