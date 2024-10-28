@@ -1,52 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 19:06:39 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/28 13:37:49 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/10/28 14:33:51 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/10/28 16:23:40 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	if (!lst || !new)
+	t_list	*temp;
+
+	if (!lst || !del)
 		return ;
-	new->next = *lst;
-	*lst = new;
+	while (*lst)
+	{
+		temp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = temp;
+	}
+}
+
+void	delete(void *content)
+{
+	free(content);
 }
 
 /* int	main(void)
 {
 	t_list	*head = NULL;
-	t_list	*node_1 = ft_lstnew("node 1");
-	t_list	*node_2 = ft_lstnew("node 2");
-	t_list	*node_3 = ft_lstnew("node 3");
-	// node_1->next = node_2;
-	// node_2->next = node_3;
-
-
-	//head -> node1 -> node2 -> node3 -> NULL
-	ft_lstadd_front(&head, node_3);
-	ft_lstadd_front(&head, node_2);
-	ft_lstadd_front(&head, node_1);
-
-
+	t_list	*node_1 = ft_lstnew(strdup("Node 1"));
+	t_list	*node_2 = ft_lstnew(strdup("Node 2"));
+	t_list	*node_3 = ft_lstnew(strdup("Node 3"));
 	t_list	*current = head;
-	printf("%p\n", head);
+
+	node_1->next = node_2;
+	node_2->next = node_3;
 
 	while (current)
 	{
 		printf("Node content => %s\n", (char *)current->content);
-		printf("%p\n", current);
 		current = current->next;
 	}
-
-	free(node_3);
-	free(node_2);
-	free(node_1);
+	
+	ft_lstclear(&node_2, delete);
+	
+	while (current)
+	{
+		printf("Node content => %s\n", (char *)current->content);
+		current = current->next;
+	}
 } */

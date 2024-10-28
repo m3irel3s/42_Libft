@@ -9,8 +9,11 @@ ft_strrchr.c ft_strnstr.c ft_strtrim.c ft_substr.c ft_tolower.c \
 ft_toupper.c ft_itoa.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 ft_putnbr_fd.c ft_strmapi.c ft_striteri.c ft_split.c
 
+BONUS = ft_lstclear.c ft_lstnew.c ft_lstdelone.c
 
 OBJ = $(SRC:.c=.o)
+
+BONUS_OBJ = $(BONUS:.c=.o)
 
 all: $(NAME)
 
@@ -20,8 +23,11 @@ $(NAME): $(OBJ)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+bonus: $(OBJ) $(BONUS_OBJ)
+	ar rcs $(NAME) $(BONUS_OBJ)
+
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(BONUS_OBJ)
 
 fclean: clean
 	rm -f $(NAME)

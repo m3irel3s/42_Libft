@@ -1,48 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 19:06:39 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/28 13:37:49 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/10/28 11:24:32 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/10/28 13:37:48 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
+	t_list	*current;
+
 	if (!lst || !new)
 		return ;
-	new->next = *lst;
-	*lst = new;
+	if (*lst == NULL)
+		*lst = new;
+	else
+	{
+		current = *lst;
+		while (current->next != NULL)
+			current = current->next;
+		current->next = new;
+	}
 }
-
-/* int	main(void)
+/* 
+int	main(void)
 {
 	t_list	*head = NULL;
-	t_list	*node_1 = ft_lstnew("node 1");
-	t_list	*node_2 = ft_lstnew("node 2");
-	t_list	*node_3 = ft_lstnew("node 3");
-	// node_1->next = node_2;
-	// node_2->next = node_3;
+	t_list	*node_1 = ft_lstnew("Node 1");
+	t_list	*node_2 = ft_lstnew("Node 2");
+	t_list	*node_3 = ft_lstnew("Node 3");
+	
+	ft_lstadd_back(&head, node_3);
+	ft_lstadd_back(&head, node_2);
+	ft_lstadd_back(&head, node_1);
 
+	t_list *current = head;
 
-	//head -> node1 -> node2 -> node3 -> NULL
-	ft_lstadd_front(&head, node_3);
-	ft_lstadd_front(&head, node_2);
-	ft_lstadd_front(&head, node_1);
-
-
-	t_list	*current = head;
-	printf("%p\n", head);
-
+	//head -> node3 -> node2 -> node1 -> NULL
 	while (current)
 	{
 		printf("Node content => %s\n", (char *)current->content);
-		printf("%p\n", current);
 		current = current->next;
 	}
 

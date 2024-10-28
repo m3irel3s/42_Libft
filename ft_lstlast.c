@@ -1,45 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 20:09:38 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/28 16:23:42 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/10/28 11:01:54 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/10/28 13:38:01 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+t_list *ft_lstlast(t_list *lst)
 {
-	size_t	i;
-
 	if (!lst)
-		return (0);
-	i = 0;
-	while (lst)
-	{
-		i++;
+		return (NULL);
+	while (lst->next)
 		lst = lst->next;
-	}
-	return i;
+	return(lst);
 }
+/* int	main(void)
+{
+	t_list	*head;
+	t_list	*node_1 = ft_lstnew("node 1");
+	t_list	*node_2 = ft_lstnew("node 2");
+	t_list	*node_3 = ft_lstnew("node 3");
 
-// int	main(void)
-// {
-// 	t_list	*node_1 = ft_lstnew("node 1");
-// 	t_list	*node_2 = ft_lstnew("node 2");
-// 	t_list	*node_3 = ft_lstnew("node 3");
-
-// 	node_1->next = node_2;
-// 	node_2->next = node_3;
-
-// 	size_t	i = ft_lstsize(node_1);
-// 	printf("%zu\n", i);
-
-// 	free(node_1);
-// 	free(node_2);
-// 	free(node_3);
-// }
+	
+	node_1->next = node_2;
+	node_2->next = node_3;
+	head = ft_lstlast(node_1);
+	printf("%s", (char *)head->content);
+	free(node_1);
+}	 */

@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 12:26:15 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/27 15:14:55 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/28 12:13:51 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,12 @@ static char	*ft_strndup(const char *s, size_t n)
 
 static void	ft_fill(char **new, const char *s, char c)
 {
-	size_t	i = 0;
-	size_t	z = 0;
+	size_t	i;
+	size_t	z;
 	size_t	word_len;
-
+	
+	i = 0;
+	z = 0;
 	while (s[i])
 	{
 		while (s[i] && s[i] == c)
