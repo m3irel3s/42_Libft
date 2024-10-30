@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 17:11:23 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/25 15:15:27 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/30 20:42:33 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 /* int	main(void)
 {
 	char	*str1 = "hello world!";
-	char	*str2 = "l";
-	printf("ft_strstr: %s\n", ft_strnstr(str1, str2, 3));
+	char	*str2 = "we";
+	printf("ft_strstr: %s\n", ft_strnstr(str1, str2, 10));
 	printf("ft_strstr: %s\n", ft_strnstr(str1, str2, 10));
 } */

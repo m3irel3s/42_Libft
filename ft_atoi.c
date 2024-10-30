@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 17:25:24 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/23 21:57:50 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/29 20:37:14 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ int	ft_atoi(const char *nptr)
 }
 /* int	main(void)
 {
-	printf("%d\n", ft_atoi("++3232"));
-	printf("%d\n", atoi("-+3232"));
+	printf("%d\n", ft_atoi("+3232"));
+	printf("%d\n", atoi("+3232"));
 } */

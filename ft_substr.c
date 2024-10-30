@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 11:26:01 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/25 14:44:51 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/30 20:42:32 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*substr;
-	size_t			str_len;
+	char	*substr;
+	size_t	str_len;
 
 	if (s == NULL)
 		return (NULL);
@@ -35,14 +35,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*original = "hello world";
 	char	*substr;
-	substr = ft_substr(original, 3, 3);
-	if(substr)
-	{
-		printf("%s", substr);
-		free(substr);
-	}
-	else
-	{
-		printf("memory failed to alloc");
-	}
+	substr = ft_substr(original, 3, 15);
+	printf("%s", substr);
+	free(substr);
 } */

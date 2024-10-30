@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 14:38:23 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/24 22:15:46 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/30 20:42:14 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 /* int	main(void)
 {
-	char	*s = "helloola";
-	char	c = 'l';
+	char	*s = "helloola3";
+	char	c = 'a';
 	char *p;
 	char *d;
 

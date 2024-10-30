@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 11:01:54 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/28 13:38:01 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/30 20:42:41 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ t_list *ft_lstlast(t_list *lst)
 	t_list	*node_2 = ft_lstnew("node 2");
 	t_list	*node_3 = ft_lstnew("node 3");
 
-	
+
 	node_1->next = node_2;
 	node_2->next = node_3;
 	head = ft_lstlast(node_1);
 	printf("%s", (char *)head->content);
 	free(node_1);
-}	 */
+} */

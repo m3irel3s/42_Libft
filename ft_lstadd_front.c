@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 19:06:39 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/28 13:37:49 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/30 20:42:24 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 
 	//head -> node1 -> node2 -> node3 -> NULL
 	ft_lstadd_front(&head, node_3);
-	ft_lstadd_front(&head, node_2);
-	ft_lstadd_front(&head, node_1);
+	ft_lstadd_front(&head, node_2);  // &head points to node_3 and head becomes node 2
+	ft_lstadd_front(&head, node_1);  // &head points to node_2 and head becomes node 1
 
 
 	t_list	*current = head;

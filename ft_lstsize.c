@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 20:09:38 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/28 16:23:42 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/30 20:42:15 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,19 @@ int ft_lstsize(t_list *lst)
 	return i;
 }
 
-// int	main(void)
-// {
-// 	t_list	*node_1 = ft_lstnew("node 1");
-// 	t_list	*node_2 = ft_lstnew("node 2");
-// 	t_list	*node_3 = ft_lstnew("node 3");
+/* int	main(void)
+{
+	t_list	*node_1 = ft_lstnew("node 1");
+	t_list	*node_2 = ft_lstnew("node 2");
+	t_list	*node_3 = ft_lstnew("node 3");
 
-// 	node_1->next = node_2;
-// 	node_2->next = node_3;
+	node_1->next = node_2;
+	node_2->next = node_3;
 
-// 	size_t	i = ft_lstsize(node_1);
-// 	printf("%zu\n", i);
+	size_t	i = ft_lstsize(node_1);
+	printf("%zu\n", i);
 
-// 	free(node_1);
-// 	free(node_2);
-// 	free(node_3);
-// }
+	free(node_1);
+	free(node_2);
+	free(node_3);
+} */

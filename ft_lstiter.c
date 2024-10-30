@@ -1,61 +1,66 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 14:33:51 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/30 20:42:23 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/10/30 17:32:26 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/10/30 20:42:39 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*temp;
-
-	if (!lst || !del)
+	if (!lst || !f)
 		return ;
-	while (*lst)
+	while(lst)
 	{
-		temp = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = temp;
+		if (lst->content)
+			f(lst->content);
+		lst = lst->next;
 	}
 }
 
-/* void	delete(void *content)
+/* void	ft_increase_ascii(void *content)
 {
-	free(content);
-} */
+	size_t	i;
+	char	*str = (char *)content;
 
-/* int	main(void)
+	i = 0;
+	while (str[i])
+	{
+		str[i] += 1;
+		i++;
+	}
+}
+
+int	main(void)
 {
-	t_list	*node_1 = ft_lstnew(strdup("Node 1"));
-	t_list	*node_2 = ft_lstnew(strdup("Node 2"));
-	t_list	*node_3 = ft_lstnew(strdup("Node 3"));
+	t_list	*node_1 = ft_lstnew(strdup("node 1"));
+	t_list	*node_2 = ft_lstnew(strdup("node 2"));
+	t_list	*node_3 = ft_lstnew(strdup("node 3"));
 
 	node_1->next = node_2;
 	node_2->next = node_3;
-
 	t_list	*current = node_1;
-	printf("Before deleting\n");
-	while (current)
-	{
-		printf("Node content => %s\n", (char *)current->content);
-		current = current->next;
-	}
-	printf("\nDeleting node_2 and up\n\n");
-	ft_lstclear(&node_2, delete);
-	current = node_1;
-	node_1->next = NULL;
-	printf("After deleting\n");
+
+	printf("Before lstiter\n");
 	while (current)
 	{
 		printf("Node content => %s\n", (char *)current->content);
 		current = current->next;
 	}
 
+	ft_lstiter(node_1, ft_increase_ascii);
+
+	current = node_1;
+	printf("After lstiter\n");
+	while (current)
+	{
+		printf("Node content => %s\n", (char *)current->content);
+		current = current->next;
+	}
 } */

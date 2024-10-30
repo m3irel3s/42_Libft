@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 13:39:57 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/28 16:23:41 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/30 20:42:22 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,21 @@ void ft_lstdelone(t_list *lst, void (*del)(void*))
 	free(lst);
 }
 
-void	del(void *content)
+/* void	del(void *content)
 {
 	free(content);
-}
-/* 
-int	main(void)
+} */
+
+/* int	main(void)
 {
-	//head -> node3 -> node2 -> node1 -> NULL
-	t_list	*head = NULL;
 	t_list	*node_1 = ft_lstnew(strdup("Node 1"));
 	t_list	*node_2 = ft_lstnew(strdup("Node 2"));
 	t_list	*node_3 = ft_lstnew(strdup("Node 3"));
-	t_list *current = head;
 
 	node_1->next = node_2;
 	node_2->next = node_3;
+	printf("Before deleting\n");
+	t_list	*current = node_1;
 
 	while (current)
 	{
@@ -43,8 +42,11 @@ int	main(void)
 		current = current->next;
 	}
 
+	printf("\nDeleting node_2\n\n");
+	node_1->next = node_3;
 	ft_lstdelone(node_2, del);
-	current = head;
+	current = node_1;
+	printf("After deleting\n");
 	while (current)
 	{
 		printf("Node content after => %s\n", (char *)current->content);
