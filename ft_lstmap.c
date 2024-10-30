@@ -6,38 +6,54 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 18:16:27 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/30 20:42:18 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/30 20:56:42 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static t_list	*ft_mklst(t_list *list, void *(*f)(void *), void (*del)(void *))
+{
+	t_list	*n_list;
+	void	*content;
+
+	if (!list || !f || !del)
+		return (NULL);
+	content = f(list->content);
+	n_list = ft_lstnew(content);
+	if (!n_list)
+	{
+		del(content);
+		return (NULL);
+	}
+	return (n_list);
+}
+
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*first;
-	t_list	*new;
+	t_list	*n_list;
+	t_list	*list_start;
+	void	*content;
 
-	if (!f || !del)
+	list_start = ft_mklst(lst, f, del);
+	if (!list_start)
 		return (NULL);
-	first = NULL;
+	n_list = list_start;
+	lst = lst->next;
 	while (lst)
 	{
-		if (!(new = ft_lstnew((*f)(lst->content))))
+		content = f(lst->content);
+		n_list->next = ft_lstnew(content);
+		if (!n_list->next)
 		{
-			while (first)
-			{
-				new = first->next;
-				(*del)(first->content);
-				free(first);
-				first = new;
-			}
-			lst = NULL;
+			del(content);
+			ft_lstclear(&list_start, del);
 			return (NULL);
 		}
-		ft_lstadd_back(&first, new);
+		n_list = n_list->next;
 		lst = lst->next;
 	}
-	return (first);
+	return (list_start);
 }
 /* 
 void	delete(void *content)

@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 12:26:15 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/28 12:13:51 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/30 20:56:40 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,80 +16,98 @@
 
 #include "libft.h"
 
-static int	ft_count_words(char const *str, char c)
+static	char	**ft_free_split(char **strs, size_t seg)
 {
-	size_t	counter;
 	size_t	i;
 
 	i = 0;
-	counter = 0;
-	while (str[i])
+	while (i < seg)
 	{
-		while (str[i] && str[i] == c)
-			i++;
-		if (str[i] && str[i] != c)
+		free(strs[i]);
+		++i;
+	}
+	free(strs);
+	return (0);
+}
+
+static size_t	ft_seglen(char const *s, char sep)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i] && s[i] != sep)
+		++i;
+	return (i);
+}
+
+static char	**ft_alloc(char **strs, char const *s, char sep, size_t segs)
+{
+	size_t	i;
+	size_t	j;
+	size_t	seg;
+
+	i = 0;
+	seg = 0;
+	while (seg < segs)
+	{
+		j = 0;
+		while (s[i] && s[i] == sep)
+			++i;
+		strs[seg] = malloc(ft_seglen(&s[i], sep) + 1);
+		if (!strs[seg])
+			return (ft_free_split(strs, seg));
+		while (s[i] && s[i] != sep)
 		{
-			counter++;
-			while (str[i] && str[i] != c)
-				i++;
+			strs[seg][j] = s[i];
+			++i;
+			++j;
 		}
+		strs[seg][j] = '\0';
+		++seg;
 	}
-	return (counter);
-}
-static char	*ft_strndup(const char *s, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	char	*dup = malloc(n + 1);
-	if(!dup)
-		return (NULL);
-	while (i < n)
-	{
-		dup[i] = s[i];
-		i++;
-	}
-	dup[n] = '\0';
-	return (dup);
+	return (strs);
 }
 
-static void	ft_fill(char **new, const char *s, char c)
+static int	ft_segcount(char const *s, char sep)
 {
+	size_t	segs;
 	size_t	i;
-	size_t	z;
-	size_t	word_len;
-	
+	int		counting;
+
 	i = 0;
-	z = 0;
+	segs = 0;
+	counting = 0;
+	if (!s)
+		return (0);
 	while (s[i])
 	{
-		while (s[i] && s[i] == c)
-			i++;
-		word_len = 0;
-		while (s[i + word_len] && s[i + word_len] != c)
-			word_len++;
-		if (word_len > 0)
+		if (s[i] != sep && !counting)
 		{
-			new[z++] = ft_strndup(s + i, word_len);
-			i += word_len;
+			counting = 1;
+			++segs;
 		}
+		if (s[i] == sep && counting)
+			counting = 0;
+		++i;
 	}
+	return (segs);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	words_counter;
-	char	**new;
+	char	**strs;
+	size_t	segs;
 
 	if (!s)
 		return (NULL);
-	words_counter = ft_count_words(s, c);
-	new = malloc(sizeof(char *) * (words_counter + 1));
-	if(!new)
+	segs = ft_segcount(s, c);
+	strs = malloc((segs + 1) * sizeof(char *));
+	if (!strs)
 		return (NULL);
-	new[words_counter] = NULL;
-	ft_fill(new, s, c);
-	return (new);
+	strs[segs] = 0;
+	if (segs > 0)
+		strs = ft_alloc(strs, s, c, segs);
+	return (strs);
 }
 
 /* int	main(void)
