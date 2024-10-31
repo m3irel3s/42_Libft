@@ -6,55 +6,55 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 18:16:27 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/30 20:56:42 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/31 01:10:25 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static t_list	*ft_mklst(t_list *list, void *(*f)(void *), void (*del)(void *))
+static t_list	*ft_create_node(void *content, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*n_list;
-	void	*content;
+	void	*new_content;
+	t_list	*new_node;
 
-	if (!list || !f || !del)
-		return (NULL);
-	content = f(list->content);
-	n_list = ft_lstnew(content);
-	if (!n_list)
+	new_content = f(content);
+	new_node = ft_lstnew(new_content);
+	if (!new_node)
 	{
-		del(content);
+		del(new_content);
 		return (NULL);
 	}
-	return (n_list);
+	return (new_node);
 }
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*n_list;
-	t_list	*list_start;
-	void	*content;
+	t_list	*new_list;
+	t_list	*new_node;
+	t_list	*current_new_node;
 
-	list_start = ft_mklst(lst, f, del);
-	if (!list_start)
+	new_list = NULL;
+	current_new_node = NULL;
+	if (!lst || !f || !del)
 		return (NULL);
-	n_list = list_start;
-	lst = lst->next;
 	while (lst)
 	{
-		content = f(lst->content);
-		n_list->next = ft_lstnew(content);
-		if (!n_list->next)
+		new_node = ft_create_node(lst->content, f, del);
+		if (!new_node)
 		{
-			del(content);
-			ft_lstclear(&list_start, del);
+			ft_lstclear(&new_list, del);
 			return (NULL);
 		}
-		n_list = n_list->next;
+		if (!new_list)
+			new_list = new_node;
+		else
+			current_new_node->next = new_node;
+		current_new_node = new_node;
 		lst = lst->next;
 	}
-	return (list_start);
+	return (new_list);
 }
+
 /* 
 void	delete(void *content)
 {
@@ -92,10 +92,11 @@ int	main(void)
 		printf("Node content => %s\n", (char *)current->content);
 		current = current->next;
 	}
-	t_list *new_list = ft_lstmap(node_1, ft_increase_ascii, delete);
 
+	ft_lstmap(node_1, ft_increase_ascii, delete);
+
+	current = node_1;
 	printf("After lstmap\n");
-	current = new_list;
 	while (current)
 	{
 		printf("Node content => %s\n", (char *)current->content);

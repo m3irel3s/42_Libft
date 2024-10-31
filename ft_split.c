@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 12:26:15 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/30 20:56:40 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/31 01:10:21 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,101 +16,78 @@
 
 #include "libft.h"
 
-static	char	**ft_free_split(char **strs, size_t seg)
+static size_t	count_words(char const *s, char c)
 {
-	size_t	i;
+	size_t	counter;
+	int		inside;
 
-	i = 0;
-	while (i < seg)
+	counter = 0;
+	inside = 0;
+	while (*s)
 	{
-		free(strs[i]);
-		++i;
-	}
-	free(strs);
-	return (0);
-}
-
-static size_t	ft_seglen(char const *s, char sep)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i] && s[i] != sep)
-		++i;
-	return (i);
-}
-
-static char	**ft_alloc(char **strs, char const *s, char sep, size_t segs)
-{
-	size_t	i;
-	size_t	j;
-	size_t	seg;
-
-	i = 0;
-	seg = 0;
-	while (seg < segs)
-	{
-		j = 0;
-		while (s[i] && s[i] == sep)
-			++i;
-		strs[seg] = malloc(ft_seglen(&s[i], sep) + 1);
-		if (!strs[seg])
-			return (ft_free_split(strs, seg));
-		while (s[i] && s[i] != sep)
+		if (*s != c && !inside)
 		{
-			strs[seg][j] = s[i];
-			++i;
-			++j;
+			inside = 1;
+			counter++;
 		}
-		strs[seg][j] = '\0';
-		++seg;
+		else if (*s == c)
+			inside = 0;
+		s++;
 	}
-	return (strs);
+	return (counter);
 }
 
-static int	ft_segcount(char const *s, char sep)
+static char	*get_next_word(char const **s, char c)
 {
-	size_t	segs;
-	size_t	i;
-	int		counting;
+	char const	*word_start;
+	size_t		word_len;
 
-	i = 0;
-	segs = 0;
-	counting = 0;
-	if (!s)
-		return (0);
-	while (s[i])
+	word_start = *s;
+	word_len = 0;
+	while (**s && **s != c)
 	{
-		if (s[i] != sep && !counting)
-		{
-			counting = 1;
-			++segs;
-		}
-		if (s[i] == sep && counting)
-			counting = 0;
-		++i;
+		(*s)++;
+		word_len++;
 	}
-	return (segs);
+	return (ft_substr(word_start, 0, word_len));
+}
+static void	*free_split(char **split, size_t count)
+{
+	while (count--)
+		free(split[count]);
+	free(split);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**strs;
-	size_t	segs;
+	char	**res;
+	size_t	word_count;
+	size_t	i;
 
 	if (!s)
 		return (NULL);
-	segs = ft_segcount(s, c);
-	strs = malloc((segs + 1) * sizeof(char *));
-	if (!strs)
+	word_count = count_words(s, c);
+	res = ft_calloc(word_count + 1, sizeof(char *));
+	if (!res)
 		return (NULL);
-	strs[segs] = 0;
-	if (segs > 0)
-		strs = ft_alloc(strs, s, c, segs);
-	return (strs);
+	i = 0;
+	while (*s)
+	{
+		while (*s == c)
+			s++;
+		if (*s)
+		{
+			res[i] = get_next_word(&s, c);
+			if (!res[i])
+				return (free_split(res, i));
+			i++;
+		}
+	}
+	return (res);
 }
 
-/* int	main(void)
+int	main(void)
 {
 	char	*str = "Heeello World , Goodbye Fellas !e eoklaeeee";
 	char	*str1 = "      split       this for   me  !       ";
@@ -128,4 +105,4 @@ char	**ft_split(char const *s, char c)
 	}
 	free(res);
 	return (0);
-} */
+}
