@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 15:50:02 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/30 20:42:35 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/31 12:54:23 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,12 @@
 // static void	ft_sum(unsigned int i, char *c);
 // void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
-
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	size_t	i;
 
 	if (!s || !f)
-		return;
+		return ;
 	i = 0;
 	while (s[i])
 	{

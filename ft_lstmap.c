@@ -6,18 +6,18 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 18:16:27 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/31 01:10:25 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/31 13:43:42 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static t_list	*ft_create_node(void *content, void *(*f)(void *), void (*del)(void *))
+static t_list	*ft_make_node(void *c, void *(*f)(void *), void (*del)(void *))
 {
 	void	*new_content;
 	t_list	*new_node;
 
-	new_content = f(content);
+	new_content = f(c);
 	new_node = ft_lstnew(new_content);
 	if (!new_node)
 	{
@@ -39,7 +39,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		return (NULL);
 	while (lst)
 	{
-		new_node = ft_create_node(lst->content, f, del);
+		new_node = ft_make_node(lst->content, f, del);
 		if (!new_node)
 		{
 			ft_lstclear(&new_list, del);
@@ -55,8 +55,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	return (new_list);
 }
 
-/* 
-void	delete(void *content)
+/* void	delete(void *content)
 {
 	free(content);
 }

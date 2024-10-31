@@ -6,19 +6,19 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 11:01:54 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/30 20:42:41 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/31 12:50:13 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
 		return (NULL);
 	while (lst->next)
 		lst = lst->next;
-	return(lst);
+	return (lst);
 }
 /* int	main(void)
 {

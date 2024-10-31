@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 17:32:26 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/30 20:42:39 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/31 12:49:52 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!lst || !f)
 		return ;
-	while(lst)
+	while (lst)
 	{
 		if (lst->content)
 			f(lst->content);

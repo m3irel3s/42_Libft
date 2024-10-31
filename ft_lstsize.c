@@ -6,13 +6,13 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 20:09:38 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/30 20:42:15 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/31 12:53:19 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	size_t	i;
 
@@ -24,7 +24,7 @@ int ft_lstsize(t_list *lst)
 		i++;
 		lst = lst->next;
 	}
-	return i;
+	return (i);
 }
 
 /* int	main(void)

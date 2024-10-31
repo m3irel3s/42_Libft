@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 15:41:06 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/30 20:42:25 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/31 12:49:31 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	ft_num_len(int n)
 	int		num_len;
 
 	num_len = 0;
-	if(n <= 0)
+	if (n <= 0)
 		num_len = 1;
 	while (n)
 	{

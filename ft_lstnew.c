@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 17:39:18 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/30 20:42:17 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/10/31 12:53:03 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_list	*ft_lstnew(void *content)
 		return (NULL);
 	new->content = content;
 	new->next = NULL;
-	return(new);
+	return (new);
 }
 
 /* int	main(void)
