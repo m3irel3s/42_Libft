@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/24 17:10:13 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/11/04 16:48:15 by jmeirele         ###   ########.fr       */
+/*   Created: 2024/11/04 16:46:21 by jmeirele          #+#    #+#             */
+/*   Updated: 2024/11/04 16:47:03 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_putchar(char c)
 {
-	write(fd, &c, 1);
+	write(1, &c, 1);
 }
-
-/* int	main(void)
-{
-	ft_putchar_fd('e', 2);
-} */

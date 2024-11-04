@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 14:48:05 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/31 12:56:10 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/11/04 16:48:13 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,10 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_atoi(const char *nptr);
+
+//                        EXTRA MINE                          //
+
+void	ft_putchar(char c);
 
 // ---------------------------------------------------------- //
 
