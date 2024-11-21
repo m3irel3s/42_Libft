@@ -1,9 +1,9 @@
-NAME = libft.a
-CC = cc
-CFLAGS = -Wall -Wextra -Werror -I. -I$(INC_DIR)
-SRC_DIR = src
-OBJ_DIR = obj
-INC_DIR = inc
+NAME =	libft.a
+CC =	cc
+CFLAGS =	-Wall -Wextra -Werror -I. -I$(INC_DIR)
+SRC_DIR =	src
+OBJ_DIR =	obj
+INC_DIR =	inc
 
 FILES = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
         ft_isascii.c ft_isdigit.c ft_isprint.c ft_memchr.c ft_memcmp.c \
