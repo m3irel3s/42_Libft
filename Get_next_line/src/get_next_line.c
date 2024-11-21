@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 11:55:54 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/11/12 15:46:30 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/11/21 17:26:04 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_read_to_new_line(int fd, char *storage)
 		if (bytes_read == 0)
 			break ;
 		temp[bytes_read] = '\0';
-		storage = ft_strjoin(storage, temp);
+		storage = ft_strjoin_gnl(storage, temp);
 	}
 	free(temp);
 	return (storage);
