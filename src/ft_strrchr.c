@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 11:37:08 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/25 15:01:40 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/11/07 17:01:04 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strrchr(const char *s, int c)
 }
 /* int	main(void)
 {
-	char	*str = "fdsaofewifewqfi";
+	char	*str = "fdsaofewifewqfiffdfdfd";
 	printf("%s", ft_strrchr(str, 'i'));
 } */
 // if (!s)
