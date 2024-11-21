@@ -6,11 +6,11 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 21:56:51 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/29 20:52:38 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/11/21 12:05:47 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../inc/libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {

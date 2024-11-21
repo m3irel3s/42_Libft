@@ -6,11 +6,11 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 11:29:07 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/23 21:45:51 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/11/21 12:05:47 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../inc/libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

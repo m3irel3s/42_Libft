@@ -6,11 +6,11 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 12:34:30 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/25 11:10:54 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/11/21 12:05:47 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../inc/libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

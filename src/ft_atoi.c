@@ -6,11 +6,11 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 17:25:24 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/29 20:37:14 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/11/21 12:05:48 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../inc/libft.h"
 
 int	ft_atoi(const char *nptr)
 {

@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 12:26:15 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/31 13:42:14 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/11/21 12:05:47 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 // Allocate memory for the array of strings
 // Cpy the word in the correct position
 
-#include "libft.h"
+#include "../inc/libft.h"
 
 static size_t	ft_count_words(char const *s, char c)
 {

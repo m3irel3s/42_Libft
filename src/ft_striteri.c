@@ -6,11 +6,11 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 15:50:02 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/10/31 12:54:23 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/11/21 12:05:47 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../inc/libft.h"
 
 // static void	ft_sum(unsigned int i, char *c);
 // void	ft_striteri(char *s, void (*f)(unsigned int, char*));
