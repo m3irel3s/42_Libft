@@ -16,11 +16,11 @@ FILES = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 BONUS_FILES = ft_lstclear.c ft_lstnew.c ft_lstdelone.c ft_lstadd_front.c ft_lstsize.c \
               ft_lstlast.c ft_lstadd_back.c ft_lstiter.c ft_lstmap.c
 
-SRC =		$(addprefix $(SRC_DIR)/, $(FILES))
-BONUS =		$(addprefix $(SRC_DIR)/, $(BONUS_FILES))
+SRC = $(addprefix $(SRC_DIR)/, $(FILES))
+BONUS = $(addprefix $(SRC_DIR)/, $(BONUS_FILES))
 
-OBJ =		$(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
-BONUS_OBJ =	$(BONUS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+BONUS_OBJ = $(BONUS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 all: $(NAME)
 
