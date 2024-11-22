@@ -34,6 +34,29 @@ int	ft_atoi(const char *nptr)
 	}
 	return (res * sign);
 }
+
+long	ft_atol(const char *nptr)
+{
+	int	i;
+	long	res;
+	int	sign;
+
+	i = 0;
+	res = 0;
+	sign = 1;
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
+		i++;
+	if (nptr[i] == '-')
+		sign *= -1;
+	if (nptr[i] == '+' || nptr[i] == '-')
+		i++;
+	while (nptr[i] >= 48 && nptr[i] <= 57)
+	{
+		res = res * 10 + nptr[i] - 48;
+		i++;
+	}
+	return (res * sign);
+}
 /* int	main(void)
 {
 	printf("%d\n", ft_atoi("+3232"));
