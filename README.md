@@ -1,5 +1,4 @@
 # **Libft**
-![Screenshot from 2024-12-05 12-42-53](https://github.com/user-attachments/assets/d11bdce7-d28a-418e-945b-85e0f826b4aa)
 
 ## 📚 Overview
 **Libft** is a custom implementation of the C standard library functions, designed as the foundational project at **42 School**. It includes not only the essential functions but also additional utilities for future development needs. Over time, I expanded this library by integrating my own implementations of **ft_printf** and **get_next_line**, creating a versatile and reusable library for future projects.
