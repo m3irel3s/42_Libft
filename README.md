@@ -26,12 +26,3 @@ A utility function that reads a file or standard input line-by-line:
 - Essential for reading data streams and files in future projects.
 
 ---
-
-## 🚀 Why This Library?
-Combining **Libft**, **ft_printf**, and **get_next_line** provides a powerful foundation for developing C projects. It simplifies repetitive tasks like memory management, formatted output, and file handling, enabling focus on higher-level logic.
-
-By merging these tools, this library becomes a reusable and reliable resource for future work at **42 School** and beyond.
-
----
-
-## 📂 File Structure
