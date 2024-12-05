@@ -1,5 +1,5 @@
-# **Libft**
-![Screenshot from 2024-12-05 12-46-16](https://github.com/user-attachments/assets/85fc28ca-d12f-4977-b64e-0d9d07b3ff03)
+# 📔 **Libft** 
+![Libft Image](https://github.com/user-attachments/assets/85fc28ca-d12f-4977-b64e-0d9d07b3ff03)
 
 
 ## 📚 Overview
