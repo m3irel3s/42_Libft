@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 17:25:24 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/11/21 12:05:48 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/12 11:14:16 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ int	ft_atoi(const char *nptr)
 
 long	ft_atol(const char *nptr)
 {
-	int	i;
+	int		i;
 	long	res;
-	int	sign;
+	int		sign;
 
 	i = 0;
 	res = 0;

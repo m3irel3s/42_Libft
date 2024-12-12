@@ -17,7 +17,8 @@ FT_LIBFT_SRC = $(addprefix $(LIBFT_PATH)src/, \
     ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c \
     ft_strrchr.c ft_strnstr.c ft_strtrim.c ft_substr.c ft_tolower.c \
     ft_toupper.c ft_itoa.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
-    ft_putnbr_fd.c ft_strmapi.c ft_striteri.c ft_split.c ft_putchar.c)
+    ft_putnbr_fd.c ft_strmapi.c ft_striteri.c ft_split.c ft_putchar.c \
+	ft_min_max.c)
 
 FT_PRINTF_SRC = $(addprefix $(PRINTF_PATH)src/, \
     ft_printf.c ft_print_char.c ft_print_str.c ft_print_digit.c \

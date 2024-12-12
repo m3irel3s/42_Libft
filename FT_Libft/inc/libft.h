@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 14:48:05 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/11/04 16:48:13 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/12 11:15:11 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,11 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_atoi(const char *nptr);
 long	ft_atol(const char *nptr);
 
-
-//                        EXTRA MINE                          //
+//             FUNCS ADDED AFTER THE PROJECT                  //
 
 void	ft_putchar(char c);
+int		ft_min(int num1, int num2);
+int		ft_max(int num1, int num2);
 
 // ---------------------------------------------------------- //
 
