@@ -6,13 +6,13 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 14:10:27 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/11/21 17:23:32 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/17 14:21:23 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/get_next_line.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr_gnl(const char *s, int c)
 {
 	if (!s)
 		return (NULL);
@@ -37,8 +37,8 @@ char	*ft_strjoin_gnl(char *s1, char *s2)
 
 	if (!s1 || !s2)
 		return (NULL);
-	s1_len = ft_strlen(s1);
-	s2_len = ft_strlen(s2);
+	s1_len = ft_strlen_gnl(s1);
+	s2_len = ft_strlen_gnl(s2);
 	full_str = malloc(sizeof(char) * (s1_len + s2_len + 1));
 	if (!full_str)
 		return (NULL);
@@ -56,7 +56,7 @@ char	*ft_strjoin_gnl(char *s1, char *s2)
 	return (full_str);
 }
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlen_gnl(const char *str)
 {
 	size_t	i;
 
@@ -68,14 +68,14 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-char	*ft_strdup(const char *s)
+char	*ft_strdup_gnl(const char *s)
 {
 	size_t	len;
 	size_t	i;
 	char	*p;
 
 	i = 0;
-	len = ft_strlen(s);
+	len = ft_strlen_gnl(s);
 	p = malloc(sizeof(char) * (len + 1));
 	if (p == NULL)
 		return (NULL);

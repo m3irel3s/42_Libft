@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 11:09:21 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/11/21 17:23:30 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/17 14:22:29 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ char	*ft_extract_line(char *storage);
 char	*ft_save_remaining(char *storage);
 
 //                    UTILS                     //
-char	*ft_strchr(const char *s, int c);
+char	*ft_strchr_gnl(const char *s, int c);
 char	*ft_strjoin_gnl(char *s1, char *s2);
-size_t	ft_strlen(const char *str);
-char	*ft_strdup(const char *s);
+size_t	ft_strlen_gnl(const char *str);
+char	*ft_strdup_gnl(const char *s);
 
 #endif
