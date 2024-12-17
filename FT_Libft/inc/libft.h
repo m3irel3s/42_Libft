@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 14:48:05 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/17 14:32:14 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/17 16:18:36 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ long	ft_atol(const char *nptr);
 void	ft_putchar(char c);
 int		ft_min(int num1, int num2);
 int		ft_max(int num1, int num2);
+int		ft_strlen_to_new_line(char *str);
+
 
 // ---------------------------------------------------------- //
 
