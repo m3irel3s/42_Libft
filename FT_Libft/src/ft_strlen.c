@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 10:45:41 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/17 16:18:45 by jmeirele         ###   ########.fr       */
+/*   Updated: 2024/12/18 13:12:23 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,11 @@ int	ft_strlen_to_new_line(char *str)
 	int	i;
 
 	i = 0;
+	if (!str)
+		return (0);
 	while (str[i])
 	{
-		if(str[i] == '\n')
+		if (str[i] == '\n')
 			return (i);
 		i++;
 	}
