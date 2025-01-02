@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 11:55:54 by jmeirele          #+#    #+#             */
-/*   Updated: 2025/01/02 18:26:24 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/01/02 18:36:04 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,11 @@ char	*get_next_line(int fd)
 		storage[0] = '\0';
 	}
 	storage = ft_read_to_new_line(fd, storage);
+	if (!storage)
+		return (NULL);
 	res = ft_extract_line(storage);
 	storage = ft_save_remaining(storage);
+	if (!storage)
+		return (free(storage), NULL);
 	return (res);
 }
