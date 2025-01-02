@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 11:55:54 by jmeirele          #+#    #+#             */
-/*   Updated: 2025/01/02 18:25:36 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/01/02 18:26:24 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ char	*ft_save_remaining(char *storage)
 	while (storage[len] && storage[len] != '\n')
 		len++;
 	if (!storage[len])
-		return (NULL);
+		return (free(storage), NULL);
 	to_save = ft_strdup_gnl(storage + len + 1);
 	free(storage);
 	return (to_save);
