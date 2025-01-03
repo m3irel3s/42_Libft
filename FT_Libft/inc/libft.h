@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 14:48:05 by jmeirele          #+#    #+#             */
-/*   Updated: 2025/01/02 18:38:32 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/01/03 14:30:49 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include <string.h>
 # include <bsd/string.h>
 # include <limits.h>
+# include <sys/wait.h>
 
 //                PART 1 - MANDATORY FUNCTIONS                   //
 
