@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 12:26:15 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/11/21 12:05:47 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/01/09 14:54:52 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ char	**ft_split(char const *s, char c)
 		{
 			res[i] = ft_get_next_word(&s, c);
 			if (!res[i])
-				return (ft_free_split(res, i));
+				return (ft_free_split(res, word_count));
 			i++;
 		}
 	}
