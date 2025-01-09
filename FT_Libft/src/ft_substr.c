@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 11:26:01 by jmeirele          #+#    #+#             */
-/*   Updated: 2025/01/09 15:17:24 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/01/09 15:18:05 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (substr == NULL)
 		return (NULL);
 	ft_strlcpy(substr, s + start, len + 1);
-	free(s);
+	free(*s);
 	return (substr);
 }
 
