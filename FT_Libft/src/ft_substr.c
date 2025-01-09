@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 11:26:01 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/11/21 12:05:47 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/01/09 14:50:44 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	str_len = ft_strlen(s);
 	if (start >= str_len)
-		return (ft_strdup(""));
+		return (NULL);
 	if (ft_strlen(s + start) < len)
 		len = ft_strlen(s + start);
 	substr = malloc(sizeof(char) * (len + 1));
