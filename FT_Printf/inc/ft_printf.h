@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:17:51 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/11/13 10:59:38 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/02/11 12:24:50 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@
 
 //                     MANDATORY FUNCTIONS                   //
 
-int	ft_printf(const char *format, ...);
-int	ft_print_char(int c);
-int	ft_print_str(char *str);
-int	ft_print_digit(long nb, int base, char c);
-int	ft_print_address(unsigned long address);
-int	ft_print_unsigned(unsigned int nb);
+int	ft_printf(int fd, const char *format, ...);
+int	ft_print_char(int fd, int c);
+int	ft_print_str(int fd, char *str);
+int	ft_print_digit(int fd, long nb, int base, char c);
+int	ft_print_address(int fd, unsigned long address);
+int	ft_print_unsigned(int fd, unsigned int nb);
 
 #endif

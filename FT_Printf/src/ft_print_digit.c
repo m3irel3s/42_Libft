@@ -6,13 +6,13 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 22:03:29 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/11/05 21:49:03 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/02/11 12:26:46 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
 
-int	ft_print_digit(long nb, int base, char c)
+int	ft_print_digit(int fd, long nb, int base, char c)
 {
 	int		counter;
 	char	*symbols;
@@ -23,19 +23,19 @@ int	ft_print_digit(long nb, int base, char c)
 		symbols = "0123456789ABCDEF";
 	if (nb < 0)
 	{
-		ft_print_char('-');
-		return (ft_print_digit(-nb, base, c) + 1);
+		ft_print_char(fd, '-');
+		return (ft_print_digit(fd, -nb, base, c) + 1);
 	}
 	else if (nb < base)
-		return (ft_print_char(symbols[nb]));
+		return (ft_print_char(fd, symbols[nb]));
 	else
 	{
-		counter = ft_print_digit(nb / base, base, c);
-		return (counter + ft_print_digit(nb % base, base, c));
+		counter = ft_print_digit(fd, nb / base, base, c);
+		return (counter + ft_print_digit(fd, nb % base, base, c));
 	}
 }
 
-int	ft_print_unsigned(unsigned int nb)
+int	ft_print_unsigned(int fd, unsigned int nb)
 {
 	int		counter;
 	char	*symbols;
@@ -43,11 +43,11 @@ int	ft_print_unsigned(unsigned int nb)
 	counter = 0;
 	symbols = "0123456789";
 	if (nb < 10)
-		counter += ft_print_char(symbols[nb]);
+		counter += ft_print_char(fd, symbols[nb]);
 	else
 	{
-		counter += ft_print_unsigned(nb / 10);
-		counter += ft_print_char(symbols[nb % 10]);
+		counter += ft_print_unsigned(fd, nb / 10);
+		counter += ft_print_char(fd, symbols[nb % 10]);
 	}
 	return (counter);
 }

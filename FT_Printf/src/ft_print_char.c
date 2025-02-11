@@ -6,13 +6,13 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 16:59:21 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/11/05 21:46:31 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/02/11 12:28:26 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
 
-int	ft_print_char(int c)
+int	ft_print_char(int fd, int c)
 {
-	return (write(1, &c, 1));
+	return (write(fd, &c, 1));
 }

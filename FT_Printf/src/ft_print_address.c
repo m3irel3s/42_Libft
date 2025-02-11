@@ -6,39 +6,39 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:18:21 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/11/13 14:26:03 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/02/11 12:25:40 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf.h"
 
-static void	ft_putnbr_hex(unsigned long n)
+static void	ft_putnbr_hex(int fd, unsigned long n)
 {
 	char	*symbols;
 
 	symbols = "0123456789abcdef";
 	if (n >= 16)
 	{
-		ft_putnbr_hex(n / 16);
+		ft_putnbr_hex(fd, n / 16);
 	}
-	ft_print_char(symbols[n % 16]);
+	ft_print_char(fd, symbols[n % 16]);
 }
 
-int	ft_print_address(unsigned long address)
+int	ft_print_address(int fd, unsigned long address)
 {
 	int				counter;
 	unsigned long	temp;
 	int				hex_length;
 
 	if (!address)
-		return (ft_print_str("(nil)"));
+		return (ft_print_str(fd, "(nil)"));
 	counter = 0;
-	counter += ft_print_str("0x");
+	counter += ft_print_str(fd, "0x");
 	if (!address)
-		counter += ft_print_str("0");
+		counter += ft_print_str(fd, "0");
 	else
 	{
-		ft_putnbr_hex(address);
+		ft_putnbr_hex(fd, address);
 		temp = address;
 		hex_length = 0;
 		while (temp > 0)
