@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 13:03:31 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/12/17 11:31:45 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/02/11 17:01:08 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_strcmp(const char *s1, const char *s2)
 	while (s1[i] || s2[i])
 	{
 		if (s1[i] != s2[i])
-			return (1);
+			return (((unsigned char)s1[i] - (unsigned char)s2[i]));
 		i++;
 	}
 	return (0);
