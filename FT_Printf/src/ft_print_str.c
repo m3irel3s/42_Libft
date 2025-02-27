@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:09:34 by jmeirele          #+#    #+#             */
-/*   Updated: 2025/02/27 16:29:47 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/02/27 16:31:34 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,17 @@
 // 	}
 // 	return (counter);
 // }
+
+static size_t	ft_strlen_pf(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
 int	ft_print_str(int fd, char *str)
 {
 	int	counter;
@@ -34,7 +45,7 @@ int	ft_print_str(int fd, char *str)
 	if (!str)
 		return (ft_print_str(fd, "(null)"));
 	counter = 0;
-	write(fd, str, ft_strlen(str));
-	counter = ft_strlen(str);
+	write(fd, str, ft_strlen_pf(str));
+	counter = ft_strlen_pf(str);
 	return (counter);
 }
