@@ -46,6 +46,7 @@ RESET   = \033[0m
 all: $(NAME)
 
 $(NAME): $(OBJ)
+	@printf "\n"
 	@ar rcs $(NAME) $(OBJ)
 	@echo "$(CYAN)Archive created: $(WHITE)$(NAME)$(RESET)"
 
