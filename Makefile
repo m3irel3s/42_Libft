@@ -1,15 +1,17 @@
-NAME    = libft.a
+# Compiler and flags
 CC      = cc
-CFLAGS  = -Wall -Wextra -Werror -I. -I$(INC_DIR) -I$(LIBFT_PATH)inc -I$(PRINTF_PATH)inc -I$(GNL_PATH)inc
+CFLAGS  = -Wall -Wextra -Werror -I$(INC_DIR) -I$(LIBFT_PATH)inc -I$(PRINTF_PATH)inc -I$(GNL_PATH)inc
 
+# Paths
 SRC_DIR = src
 OBJ_DIR = obj
 INC_DIR = inc
 
-LIBFT_PATH = FT_Libft/
+LIBFT_PATH  = FT_Libft/
 PRINTF_PATH = FT_Printf/
-GNL_PATH = Get_next_line/
+GNL_PATH    = Get_next_line/
 
+# Source files
 FT_LIBFT_SRC = $(addprefix $(LIBFT_PATH)src/, \
     ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
     ft_isascii.c ft_isdigit.c ft_isprint.c ft_memchr.c ft_memcmp.c \
@@ -27,32 +29,50 @@ FT_PRINTF_SRC = $(addprefix $(PRINTF_PATH)src/, \
 GET_NEXT_LINE_SRC = $(addprefix $(GNL_PATH)src/, \
     get_next_line.c get_next_line_utils.c)
 
+# Object files
 SRC = $(FT_LIBFT_SRC) $(FT_PRINTF_SRC) $(GET_NEXT_LINE_SRC)
+OBJ = $(patsubst %.c, $(OBJ_DIR)/%.o, $(notdir $(SRC)))
 
-OBJ = $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:%.c=%.o)))
+# Archive name
+NAME = libft.a
 
+# Colors for output
+CYAN    = \033[1;36m
+WHITE   = \033[1;37m
+DIM     = \033[2m
+RESET   = \033[0m
+
+# Build rules
 all: $(NAME)
 
-$(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
-
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	@ar rcs $(NAME) $(OBJ)
+	@echo "$(CYAN)Archive created: $(WHITE)$(NAME)$(RESET)"
 
 $(OBJ_DIR)/%.o: $(LIBFT_PATH)src/%.c | $(OBJ_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@printf "$(CYAN)Compiling: $(WHITE)%-30s$(RESET)\r" $(notdir $<)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJ_DIR)/%.o: $(PRINTF_PATH)src/%.c | $(OBJ_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@printf "$(CYAN)Compiling: $(WHITE)%-30s$(RESET)\r" $(notdir $<)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJ_DIR)/%.o: $(GNL_PATH)src/%.c | $(OBJ_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@printf "$(CYAN)Compiling: $(WHITE)%-30s$(RESET)\r" $(notdir $<)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
+# Ensure obj directory exists when needed
+$(OBJ_DIR):
+	@mkdir -p $@
+
+# Cleaning
 clean:
-	rm -rf $(OBJ_DIR)
+	@rm -rf $(OBJ_DIR)
+	@echo "$(CYAN)Cleaned:$(WHITE) object files$(RESET)"
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "$(CYAN)Fully cleaned:$(WHITE) $(NAME) removed$(RESET)"
 
 re: fclean all
 
