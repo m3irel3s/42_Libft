@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 13:03:31 by jmeirele          #+#    #+#             */
-/*   Updated: 2025/03/13 10:42:11 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/03/17 11:28:30 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,4 @@ int	ft_strcmp(const char *s1, const char *s2)
 	char *str2 = "hell";
 	printf("%d", ft_strncmp(str1, str2, 11));
 } */
-	// if (!s1 || !s2 || (n <= 0))
-	// 	return (0);
+// 	return (0);
