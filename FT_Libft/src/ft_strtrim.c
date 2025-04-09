@@ -6,7 +6,7 @@
 /*   By: jmeirele <jmeirele@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 14:58:24 by jmeirele          #+#    #+#             */
-/*   Updated: 2024/11/21 12:05:47 by jmeirele         ###   ########.fr       */
+/*   Updated: 2025/04/09 13:47:24 by jmeirele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ char	*ft_strtrim(const char *s1, const char *set)
 	if (!set)
 		return (ft_strdup(s1));
 	start = 0;
-	end = (ft_strlen(s1) - 1);
+	end = ft_strlen(s1);
 	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
-	while (s1[end] && ft_strchr(set, s1[end]))
-		--end;
-	str = ft_substr(s1, start, ((end - start)) + 1);
+	while (end > start && ft_strchr(set, s1[end - 1]))
+		end--;
+	str = ft_substr(s1, start, end - start);
 	return (str);
 }
 
